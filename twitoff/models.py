@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 DB = SQLAlchemy()
 
 
+# User table
 class User(DB.Model):
     """Twitter User Table that will correspond to tweets - SQLAlchemy syntax"""
     id = DB.Column(DB.BigInteger, primary_key=True)  # id column (primary key)
@@ -15,6 +16,7 @@ class User(DB.Model):
         return "<User: {}>".format(self.name)
 
 
+# Twitter table
 class Tweet(DB.Model):
     """Tweet text data - associated with Users Table"""
     id = DB.Column(DB.BigInteger, primary_key=True)  # id column (primary key)
