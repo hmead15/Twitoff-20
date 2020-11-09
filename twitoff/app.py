@@ -17,7 +17,7 @@ def create_app():
     DB.init_app(app)
 
     # decorator listens for specific endpoint visits
-    @app.route('/')
+    @app.route('/')  # http://127.0.0.1:5000/
     def root():
         # we must create the database
         DB.drop_all()
