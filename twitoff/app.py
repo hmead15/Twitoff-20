@@ -17,7 +17,7 @@ def create_app():
     DB.init_app(app)
 
     # decorator listens for specific endpoint visits
-    @app.route('/')  # http://127.0.0.1:5000/
+    @app.route("/")  # http://127.0.0.1:5000/
     def root():
         # we must create the database
         DB.drop_all()
@@ -25,6 +25,6 @@ def create_app():
         # avoiding error since we are dropping all values - no duplicate users
         insert_example_users()
         # renders base.html template and passes down title and users
-        return render_template('base.html', title="home", users=User.query.all())
+        return render_template("base.html", title="home", users=User.query.all())
 
     return app
